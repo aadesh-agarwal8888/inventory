@@ -5,23 +5,7 @@ Technology Stack used are: Spring boot (Java) for backend and MongoDB (Database)
 ## Installation
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install components.
 
-Set Virtual Environment
-```bash
-virtualenv venv
-```
-
-For OSX/Linux: 
-```bash
-source venv/bin/activate
-```
-For Windows: 
-```bash
-venv\scripts\activate
-```
-Install Flask
-```bash
-pip install Flask
-```
+Java v8 is required to run the program.
 
 ## Execution
 To run the project: Open Terminal and move to directory inventory/src/main/java/com/example/inventory
@@ -199,6 +183,54 @@ Used to play with Items of Inventory
   }
  ]
 ```
+### Response
+**Content** : `Items Removed`
+
+##Managing Shipments
+Used to manage Shipments
+
+**URL** : `/shipment` : Retreieves all the Shipments
+
+**Method** : `GET`
+
+### Response
+```json
+[
+  {
+        "id": "Inventory ID",
+        "from": "Sender ID",
+        "to": "Receiver ID",
+        "items": [
+            {
+                "itemId": "Shipped Item ID",
+                "nos": Quantity of Items
+            }
+        ]
+    }
+]
+```
+**URL** : `/shipment` : Create a Shipment
+
+**Method** : `POST`
+
+**Data**
+
+```json
+  {
+        "from": "Sender ID",
+        "to": "Receiver ID",
+        "items": [
+            {
+                "itemId": "Item ID (to be shipped)",
+                "nos": Quantity of Items
+            }
+        ]
+  }
+```
+
+### Response
+**Content** : `Shipment Created`
+
 
 
 
