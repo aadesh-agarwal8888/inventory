@@ -3,8 +3,6 @@ This project is made for managing inventory. Basic features like Adding/Updating
 Technology Stack used are: Spring boot (Java) for backend and MongoDB (Database).
 
 ## Installation
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install components.
-
 Java v8 is required to run the program.
 
 ## Execution
