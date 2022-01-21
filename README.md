@@ -2,6 +2,9 @@
 This project is made for managing inventory. Basic features like Adding/Updating/Deleting Inventories and Items has been created. Additional featur of Creating a Shipment that sends Inventory items from one inventory to another has also been coded.
 Technology Stack used are: Spring boot (Java) for backend and MongoDB (Database).
 
+##Live Demo can be viewd at https://inventoryfrontend.herokuapp.com/
+React app github link is https://github.com/aadesh-agarwal8888/inventory-frontend
+
 ## Installation
 Java v8 is required to run the program.
 
