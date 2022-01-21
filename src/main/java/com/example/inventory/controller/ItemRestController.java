@@ -15,18 +15,26 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.inventory.model.Item;
 import com.example.inventory.service.ItemService;
 
+/**
+ * Responsible for Item end points
+ * @author aadesh agarwal
+ *
+ */
 @RestController
 @RequestMapping("/items")
 public class ItemRestController {
 
     public ItemRestController() {
-        // TODO Auto-generated constructor stub
     }
     
     @Autowired
     ItemService itemService;
     
-    @GetMapping(value = "/")
+    /**
+     * Retrieves all items
+     * @return ResponseEntity
+     */
+    @GetMapping
     public ResponseEntity<?> getAllItems() {
         List<Item> response = itemService.findAll();
         
@@ -37,7 +45,12 @@ public class ItemRestController {
         return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
     }
     
-    @PostMapping(value = "/")
+    /**
+     * Adds the item
+     * @param item - Item to be added
+     * @return ResponseEntity
+     */
+    @PostMapping
     public ResponseEntity<?> addItem(@RequestBody Item item) {
         
         itemService.saveOrUpdate(item);
@@ -46,7 +59,12 @@ public class ItemRestController {
         
     }
     
-    @PutMapping("/")
+    /**
+     * Updates the given Item
+     * @param item - item to be updated
+     * @return ResponseEntity
+     */
+    @PutMapping
     public ResponseEntity<?> updateItem(@RequestBody Item item) {
         itemService.saveOrUpdate(item);
         return new ResponseEntity<>("Item updated", HttpStatus.OK);
