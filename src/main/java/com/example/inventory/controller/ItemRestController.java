@@ -70,6 +70,11 @@ public class ItemRestController {
         return new ResponseEntity<>("Item updated", HttpStatus.OK);
     }
     
+    /**
+     * Deletes the Item
+     * @param id - Item to be deleted
+     * @return ResponseEntity
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteItem(@PathVariable("id") String id) {
         itemService.deleteByID(id);

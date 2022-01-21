@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.inventory.model.Shipment;
 import com.example.inventory.service.ShipmentService;
 
+/**
+ * Handles Shipment end points
+ * @author aadesh
+ *
+ */
 @RestController
 @RequestMapping("/shipment")
 public class ShipmentRestController {
@@ -25,6 +30,10 @@ public class ShipmentRestController {
     @Autowired
     ShipmentService shipmentService;
     
+    /**
+     * Retrieves All Shipments
+     * @return ResponseEntity
+     */
     @GetMapping
     public ResponseEntity<?> getAllShipment() {
         List<Shipment> response = shipmentService.getShipments();
@@ -34,11 +43,21 @@ public class ShipmentRestController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     
+    /**
+     * Retrieves the given Shipment 
+     * @param id - Id of the shipment to be retrieved
+     * @return
+     */
     @GetMapping("/{id}")
     public Shipment getShipment(@PathVariable String id) {
         return shipmentService.getShipment(id);
     }
     
+    /**
+     * Creates a Shipment
+     * @param shipment - Shipment to be created
+     * @return ResponseEntity
+     */
     @PostMapping
     public Shipment createShipment(@RequestBody Shipment shipment) {
         return shipmentService.createShipment(shipment);

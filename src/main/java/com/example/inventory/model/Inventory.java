@@ -3,6 +3,11 @@ package com.example.inventory.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Inventory Model that stores all the inventories
+ * @author aadesh
+ *
+ */
 @Document("inventories")
 public class Inventory {
 

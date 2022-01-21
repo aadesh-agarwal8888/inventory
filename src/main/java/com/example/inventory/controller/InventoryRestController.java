@@ -52,7 +52,7 @@ public class InventoryRestController {
     @PostMapping
     public ResponseEntity<?> createInventory(@RequestBody Inventory inventory) {
         
-        if(inventory.getInventoryName() == null || inventory.getLocation() == null)
+        if(inventory.getInventoryName() == null || inventory.getLocation() == null || inventory.getInventoryName() == "" || inventory.getLocation() == "")
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         inventoryService.saveOrUpdate(inventory);
         return new ResponseEntity<>("Inventory Created", HttpStatus.OK);

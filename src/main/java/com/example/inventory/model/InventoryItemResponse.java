@@ -1,5 +1,10 @@
 package com.example.inventory.model;
 
+/**
+ * Model for response when inventory items are requested 
+ * @author aadesh
+ *
+ */
 public class InventoryItemResponse {
 
     

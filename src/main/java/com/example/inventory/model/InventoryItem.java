@@ -4,6 +4,11 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Model of Inventory Object that stores all the items in inventory
+ * @author aadesh
+ *
+ */
 @Document("inventory")
 public class InventoryItem {
     
